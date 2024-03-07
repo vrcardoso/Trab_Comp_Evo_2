@@ -147,7 +147,7 @@ def eight_queens():
  #cria populacao inicial
     for i in range(n_boards):
         board =create_board(n_queens)
-        print(board)
+        print(f"Board inicial {i+1}",board)
         boards.append(board)
         print("Board", i+1)
         print_board(boards[i])
