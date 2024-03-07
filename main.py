@@ -1,6 +1,6 @@
 import random
 import math
-
+import time
 
 #funcao que recebe uma lista de tabuleiros e a quantidade de rainhas
 #cria um array com N rainhas colocadas aleatoriamente, e devolve o array
@@ -135,6 +135,7 @@ def mutation_childs(boards, parents,n_queens,mutate_chance =50):
     
 
 def eight_queens():
+    start_time = time.time()
     n_queens= 8      #Tamanho do problema, numero de rainhas
     n_parents = 5    #Numero de tabuleiros pais que seram escolhidos
     max_gen= 10000    #Numero maximo de geracoes
@@ -189,5 +190,28 @@ def eight_queens():
     print("Best :", index_winner[0]+1," of gen : " ,gen+1)
     print_board(boards[index_winner[0]])
     print()
+    end_time = time.time()
+    waiting_time = end_time - start_time
+    print("Waiting time: ", waiting_time, "s")
 
-eight_queens()
+    return (waiting_time, gen+1)
+
+def executeN(n):
+    (time_atual,gens_atual) = eight_queens()
+    time_sum = time_atual
+    gens = gens_atual
+    for _ in range(n-1):
+        (time_atual,gens_atual) = eight_queens()
+        time_sum += time_atual
+        gens += gens_atual
+
+
+    print("Media de tempo de ", n, " execucoes eh: ", time_sum / n)
+    result = "Media de " + str(n) + " execucoes eh: " + str((time_sum/n)) + "\n"
+    print("Media de Geracoes de ", n, " execucoes eh: ", gens / n)
+    result = "Media de Geracoes de " + str(n) + " execucoes eh: " + str((gens/n)) + "\n"
+
+    with open("resultCE.txt", "a") as arquivo:
+        arquivo.write(result)
+
+executeN(100)

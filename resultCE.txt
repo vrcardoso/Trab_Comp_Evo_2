@@ -1,0 +1,12 @@
+Média de 10 execuções é: 0.030429887771606445
+Média de 1000 execuções é: 0.024657728672027587
+Média de Geraçoes de 1000 execuções é: 0.278
+Média de Geraçoes de 10 execuções é: 35.2
+Média de Geraçoes de 100 execuções é: 0.3
+Media de Geracoes de 10 execucoes eh: 10.2
+Media de Geracoes de 10 execucoes eh: 63.4
+Media de Geracoes de 100 execucoes eh: 56.09
+Media de Geracoes de 100 execucoes eh: 54.34
+Media de Geracoes de 100 execucoes eh: 67.13
+Media de Geracoes de 1000 execucoes eh: 72.305
+Media de Geracoes de 100 execucoes eh: 61.13
