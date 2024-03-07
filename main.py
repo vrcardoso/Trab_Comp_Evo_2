@@ -207,9 +207,9 @@ def executeN(n):
 
 
     print("Media de tempo de ", n, " execucoes eh: ", time_sum / n)
-    result = "Media de " + str(n) + " execucoes eh: " + str((time_sum/n)) + "\n"
+    result = "Media de tempo de " + str(n) + " execucoes eh: " + str((time_sum/n)) + "\n"
     print("Media de Geracoes de ", n, " execucoes eh: ", gens / n)
-    result = "Media de Geracoes de " + str(n) + " execucoes eh: " + str((gens/n)) + "\n"
+    result += "Media de Geracoes de " + str(n) + " execucoes eh: " + str((gens/n)) + "\n"
 
     with open("resultCE.txt", "a") as arquivo:
         arquivo.write(result)

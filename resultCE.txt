@@ -10,3 +10,16 @@ Media de Geracoes de 100 execucoes eh: 54.34
 Media de Geracoes de 100 execucoes eh: 67.13
 Media de Geracoes de 1000 execucoes eh: 72.305
 Media de Geracoes de 100 execucoes eh: 61.13
+Media de Geracoes de 100 execucoes eh: 66.51
+Media de Geracoes de 10 execucoes eh: 636.4
+Media de Geracoes de 10 execucoes eh: 614.3
+Media de Geracoes de 10 execucoes eh: 559.5
+Media de Geracoes de 10 execucoes eh: 458.7
+Media de Geracoes de 10 execucoes eh: 693.5
+Media de Geracoes de 10 execucoes eh: 564.2
+Media de Geracoes de 10 execucoes eh: 1375.3
+Media de Geracoes de 10 execucoes eh: 2688.8
+Media de 100 execucoes eh: 0.012823855876922608
+Media de Geracoes de 100 execucoes eh: 70.84
+Media de tempo de 100 execucoes eh: 0.01107410192489624
+Media de Geracoes de 100 execucoes eh: 49.53
