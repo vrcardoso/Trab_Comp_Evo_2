@@ -108,7 +108,6 @@ def gen_childs(boards, parents,n_queens):
 
 #funcao que recebe uma lista de tabuleiro,os pais escolhidos , numero de rainhas e a chance da mutacao
 #E gera mutatoes nos tabuleiros filhos em com uma probabilidade = mutante_chance
-#tambem corrigi o numero de rainhas nos filhos, que durante a combinacao dos parentes podem ser gerados com menos de N rainhas
 def mutation_childs(boards, parents,n_queens,mutate_chance =50):
     n_matrix= n_queens * n_queens
     for i in range(len(boards)):
@@ -121,7 +120,7 @@ def mutation_childs(boards, parents,n_queens,mutate_chance =50):
         if  random.randrange(100) > mutate_chance:
             continue
 
-     #Se o numero gerado for menor que mutate_chance, escolhe aleatoriamente a posicao de uma rainha e retira ela
+     #Se o numero gerado for menor que mutate_chance, escolhe aleatoriamente 2 pos e faz o swap entre eles
         chosens= random.sample(range(n_queens),2)
         swap = child[chosens[0]]
         child[chosens[0]] = child[chosens[1]]
