@@ -23,3 +23,5 @@ Media de 100 execucoes eh: 0.012823855876922608
 Media de Geracoes de 100 execucoes eh: 70.84
 Media de tempo de 100 execucoes eh: 0.01107410192489624
 Media de Geracoes de 100 execucoes eh: 49.53
+Media de tempo de 100 execucoes eh: 0.01281156063079834
+Media de Geracoes de 100 execucoes eh: 67.64

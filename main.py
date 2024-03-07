@@ -5,8 +5,8 @@ import time
 #funcao que recebe uma lista de tabuleiros e a quantidade de rainhas
 #cria um array com N rainhas colocadas aleatoriamente, e devolve o array
 def create_board(n_queens):
-    board =[x for x in range(n_queens)]
-    random.shuffle(board) #funcao que gera uma lista de numeros de 0 a N, e bagunça essa lista
+    board =[x for x in range(n_queens)]#funcao que gera uma lista de numeros de 0 a N
+    random.shuffle(board) # funcao que bagunça uma lista
 
     return board
 
@@ -71,9 +71,9 @@ def chose_parents(colisions,n_parents):
 
     
 
-#funcao que recebe uma lista de tabuleiros, uma lista de colisoes, numero de pais,e numero de rainhas
+#funcao que recebe uma lista de tabuleiros, os pais escolhidos,e numero de rainhas
 #gera novos filhos cruzando dois pais, da lista de pais escolhidos, e substitui um tabuleiro nao pai da tabela de tabuleiros
-def gen_childs(boards, colisions,parents,n_queens):
+def gen_childs(boards, parents,n_queens):
     
 
     for i in range(len(boards)):
@@ -84,17 +84,17 @@ def gen_childs(boards, colisions,parents,n_queens):
         parent1= boards[chosens[0]] #pega da lista de tabueliros,os pais escolhidos
         parent2= boards[chosens[1]]
         
-        cycle = [False] * n_queens
-        child = [None] * n_queens
+        cycle = [False] * n_queens #gera uma lista de para marcar as posicoes que ja foram preenchidas
+        child = [None] * n_queens #gera um filho nao preenchido
 
-        # Encontre o primeiro ciclo
-        start = random.randint(0, n_queens - 1)
-        while not cycle[start]:
+        # Encontra o primeiro ciclo
+        start = random.randint(0, n_queens - 1) #Gera o inicio do ciclo
+        while not cycle[start]: #enquanto nao fecha o ciclo continua
             cycle[start] = True
-            child[start] = parent1[start]
-            start = parent2.index(parent1[start])
+            child[start] = parent1[start] # faz o valor do filho na pos start ser igual ao do pai 1 na pos start
+            start = parent2.index(parent1[start]) #pega a pos no pai2 do valor do pai 1 na posicao start, que vira o novo start 
 
-        # Preencha os valores restantes
+        # Preencha os valores restantes com o pai 2
         for j in range(n_queens):
             if not cycle[j]:
                 child[j] = parent2[j]
@@ -106,7 +106,7 @@ def gen_childs(boards, colisions,parents,n_queens):
 
 
 
-#funcao que recebe uma lista de tabuleiro, uma lista de colisoes, o numeros de pais, numero de rainhas e a chance da mutacao
+#funcao que recebe uma lista de tabuleiro,os pais escolhidos , numero de rainhas e a chance da mutacao
 #E gera mutatoes nos tabuleiros filhos em com uma probabilidade = mutante_chance
 #tambem corrigi o numero de rainhas nos filhos, que durante a combinacao dos parentes podem ser gerados com menos de N rainhas
 def mutation_childs(boards, parents,n_queens,mutate_chance =50):
@@ -162,7 +162,7 @@ def eight_queens():
    #loop das geracoes 
     for gen in range(max_gen):
         parents = chose_parents(colisions,n_parents)
-        gen_childs(boards, colisions,parents,n_queens)
+        gen_childs(boards, parents,n_queens)
         mutation_childs(boards, parents,n_queens,mutate_chance)
         colisions.clear()
         for j in range(n_boards):
